@@ -1,0 +1,17 @@
+git submodule add -b master git@github.com:noumanshah436/node-express.git
+
+git submodule add -b master git@github.com:noumanshah436/Typescript-Basics.git
+
+git submodule add -b master git@github.com:noumanshah436/Tailwind.git
+
+git submodule add -b master git@github.com:noumanshah436/Web-Development.git
+
+git submodule add -b master git@github.com:noumanshah436/Vue-Programming.git
+
+git submodule add -b master git@github.com:noumanshah436/React.git
+
+git submodule add -b master git@github.com:noumanshah436/Javascript-Programming.git
+
+git submodule add -b master git@github.com:noumanshah436/JQuery-basics.git
+
+

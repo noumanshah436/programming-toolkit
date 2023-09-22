@@ -1,0 +1,32 @@
+[submodule "node-express"]
+	path = node-express
+	url = git@github.com:noumanshah436/node-express.git
+	branch = master
+[submodule "Typescript-Basics"]
+	path = Typescript-Basics
+	url = git@github.com:noumanshah436/Typescript-Basics.git
+	branch = master
+[submodule "Tailwind"]
+	path = Tailwind
+	url = git@github.com:noumanshah436/Tailwind.git
+	branch = master
+[submodule "Web-Development"]
+	path = Web-Development
+	url = git@github.com:noumanshah436/Web-Development.git
+	branch = master
+[submodule "Vue-Programming"]
+	path = Vue-Programming
+	url = git@github.com:noumanshah436/Vue-Programming.git
+	branch = master
+[submodule "React"]
+	path = React
+	url = git@github.com:noumanshah436/React.git
+	branch = master
+[submodule "Javascript-Programming"]
+	path = Javascript-Programming
+	url = git@github.com:noumanshah436/Javascript-Programming.git
+	branch = master
+[submodule "JQuery-basics"]
+	path = JQuery-basics
+	url = git@github.com:noumanshah436/JQuery-basics.git
+	branch = master
