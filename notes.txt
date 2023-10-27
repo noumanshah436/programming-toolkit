@@ -40,7 +40,13 @@ This command not only clones the main repository but also initializes and clones
 
 If you have already cloned the repository and want to initialize and update the submodules afterward, you can use the following commands:
 
-git submodule update --init --recursive
+
+git submodule update --init --recursive --remote
+
+The --init flag initializes any uninitialized submodules, 
+the --recursive flag ensures that nested submodules are handled, 
+and the --remote flag updates the submodules to the latest commit of their specified tracking branches.
+
 
 ******************************************************************
 
@@ -49,18 +55,8 @@ If you want to clone a repository and its submodules while also ensuring that th
 
 git clone --recursive <repository-url>
 cd <cloned-repo-directory>
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
-
-This sequence does the following:
-
-git clone --recursive <repository-url>: Clones the main repository and initializes and clones its submodules.
-
-cd <cloned-repo-directory>: Changes into the directory of the cloned repository.
-
-git submodule update --init --recursive: Initializes and updates all submodules, including nested submodules.
-
-By combining these commands, you achieve the desired result of cloning the main repository and its submodules while ensuring that the submodules are initialized and updated.
 
 ******************************************************************
 
@@ -94,6 +90,147 @@ If your goal is to update the submodule to the latest commit in its remote repos
 
 ******************************************************************
 
+Flags:
+
+--init: 
+Initializes submodules that have not been initialized before. It's used to ensure that all submodules are set up initially.
+
+--recursive: 
+The --recursive flag used with `git submodule update` is primarily for initializing and updating submodules, including nested submodules, but it doesn't update the submodules to the latest commit of their specified tracking branch. It's used to ensure that submodules and their nested submodules are brought to the state expected by the main repository at the time of a commit.
 
 
+--remote: 
+Updates submodules to their latest commit as specified by their remote tracking branch. This flag fetches the latest changes from the remote repository of each submodule and updates them accordingly. However, it doesn't handle nested submodules within submodules.
+
+************************************************************************
+
+
+- `git submodule update --recursive` initializes and updates submodules, including nested submodules, but it doesn't update to the latest commit of their tracking branch.
+- `git submodule update --remote` updates submodules to the latest commit of their specified tracking branch.
+
+
+************************************************************************
+Manage submodules:
+************************************************************************
+
+Question 1:
+I have made changes in my submodule and pushed the coe, now I want to update my main repo.
+
+
+
+To update the main repository to reflect the changes made in a submodule, you need to follow a few steps. Submodules in Git are essentially repositories within repositories. Here's a step-by-step guide on how to update your main repository to include the changes made in the submodule:
+
+1. **Navigate to the Submodule Directory:**
+
+   First, navigate to the directory of your submodule within the main repository. You should be in the root directory of the submodule.
+
+2. **Commit and Push the Changes in the Submodule:**
+
+   Make sure that all your changes in the submodule are committed and pushed to its remote repository. This ensures that the submodule is in the desired state.
+
+   ```bash
+   cd path/to/submodule
+   git add .
+   git commit -m "Updated submodule"
+   git push
+   ```
+
+3. **Navigate to the Main Repository:**
+
+   Next, navigate back to the root directory of your main repository.
+
+4. **Update the Submodule Reference in the Main Repository:**
+
+   You need to update the reference to the submodule in the main repository to point to the new commit in the submodule. You can do this using the following command:
+
+   ```bash
+   git submodule update --remote
+   ```
+
+   This command will update the reference to the submodule and pull the latest changes from the submodule's repository.
+
+5. **Commit the Changes in the Main Repository:**
+
+   After updating the submodule reference, you need to commit the changes in the main repository to record the updated submodule commit.
+
+   ```bash
+   git add path/to/submodule
+   git commit -m "Updated submodule reference"
+   ```
+
+6. **Push the Changes to the Main Repository:**
+
+   Finally, push the changes to the main repository's remote so that others can access the updated submodule reference.
+
+   ```bash
+   git push
+   ```
+
+Now, your main repository should be updated to include the changes made in the submodule.
+
+Remember that when others clone your main repository, they will need to initialize and update the submodule by running:
+
+```bash
+git submodule update --init --recursive
+```
+
+This will clone the submodule and bring it to the state specified by the updated reference in your main repository.
+
+**********************************************
+
+Question 2:
+I have my submodule already in my main repo and I just push the code of submodule , should I just commit in main and push the main repo also?
+
+
+
+If you have your submodule already in your main repository, and you have made changes in the submodule and pushed the changes to its remote repository, you can update the reference to the submodule in the main repository without needing to commit the submodule changes directly in the main repository. Here's how you can do that:
+
+1. In your main repository, navigate to the submodule directory:
+
+   ```bash
+   cd path/to/submodule
+   ```
+
+2. Fetch the latest changes from the submodule's remote repository:
+
+   ```bash
+   git fetch
+   ```
+
+3. Checkout the desired branch or commit in the submodule:
+
+   If you want to update the submodule to the latest commit on a specific branch (e.g., `master`), you can do so by checking out that branch:
+
+   ```bash
+   git checkout master
+   ```
+
+   If you want to use a specific commit, you can do that as well:
+
+   ```bash
+   git checkout <commit-hash>
+   ```
+
+4. Return to the main repository's root directory:
+
+   ```bash
+   cd ..
+   ```
+
+5. Update the submodule reference in the main repository to point to the new commit or branch:
+
+   ```bash
+   git add path/to/submodule
+   git commit -m "Updated submodule reference"
+   ```
+
+6. Push the changes in the main repository:
+
+   ```bash
+   git push
+   ```
+
+By following these steps, you've updated the reference of the submodule in the main repository to the new commit or branch you specified in the submodule. You don't need to commit the submodule changes directly in the main repository because the reference to the submodule is what's being updated. Others who clone the main repository will be able to initialize and update the submodule to the specified commit or branch.
+
+**********************************************
 
