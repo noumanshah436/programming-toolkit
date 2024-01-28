@@ -30,3 +30,7 @@
 	path = JQuery-basics
 	url = git@github.com:noumanshah436/JQuery-basics.git
 	branch = master
+[submodule "Database"]
+	path = Database
+	url = git@github.com:noumanshah436/Database.git
+	branch = master
