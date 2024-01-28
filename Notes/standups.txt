@@ -1,0 +1,193 @@
+
+
+
+What’s done:
+https://mrsool.atlassian.net/browse/CMT-55
+Pushed the PR on preview
+
+Increase rank limit for Service Type
+Waiting for Ali Alobaidi to validate it on pre-release
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-55
+Request mobile devs to validate it
+Work on the feedback if any
+
+Add error handling for incorrect encryption key
+Deploy it on production if approved
+
+Increase rank limit for Service Type
+Deploy on production if approved
+
+Free capacity:
+Not Available
+
+
+
+
+***************************
+
+
+
+What’s done:
+Add error handling for incorrect encryption key
+Approved by Yuriy Kharchenko
+Deployed on Production
+
+https://mrsool.atlassian.net/browse/CMT-55
+Had a meeting with  Ali Alobaidi
+Worked on changes 
+
+Increase rank limit for Service Type
+Code review done
+Waiting for Ali Alobaidi to validate the changes on pre-release
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-55
+Worked on changes
+Push the changes
+
+Increase rank limit for Service Type
+Deployed on production if approved
+
+Free capacity:
+Not Available
+
+
+***************
+
+What’s done:
+Add error handling for incorrect encryption key
+Deployed on Production
+
+https://mrsool.atlassian.net/browse/CMT-55
+Had a meeting with  Ali Alobaidi for further requirements
+Worked on changes
+Tested locally 
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-55
+Push the PR to preview
+Test on preview
+Request mobile devs to validate the API response
+
+Free capacity:
+Not Available
+
+*************************
+
+
+What’s done:
+https://mrsool.atlassian.net/browse/CMT-55
+Refactored code for API response
+Requested mobile devs to validate the response
+Got feedback from mobile devs
+
+https://mrsool.atlassian.net/browse/CMT-2
+https://mrsool.atlassian.net/browse/CMT-4
+Validated by Ali Alobaidi
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-55
+Work on feedback 
+Request for code review after it
+
+Free capacity:
+Not Available
+
+
+
+*************************
+
+
+
+What’s done:
+https://mrsool.atlassian.net/browse/CMT-55
+Work on feedback
+Push the PR
+Re-request code review
+
+https://mrsool.atlassian.net/browse/CMT-2
+https://mrsool.atlassian.net/browse/CMT-4
+Waiting for code review
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-55
+meeting with mobile devs to validate it
+Work on the feedback if any
+
+https://mrsool.atlassian.net/browse/CMT-2
+https://mrsool.atlassian.net/browse/CMT-4
+Waiting for code review
+
+Free capacity:
+Available
+
+
+************************
+
+
+What’s done:
+
+https://mrsool.atlassian.net/browse/CMT-2
+https://mrsool.atlassian.net/browse/CMT-4
+Pushed the PR with the suggested changes
+
+https://mrsool.atlassian.net/browse/CMT-55
+Had meeting with Denish regarding Graphql response
+Worked on feedback
+Pushed the PR to preview
+
+https://mrsool.atlassian.net/browse/CAI-9637
+Michal was having issue with the request signature
+Encryption key was missing on staging
+Added key and pushed it
+
+What will I do today:
+https://mrsool.atlassian.net/browse/CMT-2
+https://mrsool.atlassian.net/browse/CMT-4
+Waiting for QA validation
+
+https://mrsool.atlassian.net/browse/CMT-55
+Waiting for QA validation
+
+Free capacity:
+Available
+
+
+**********************
+
+What’s done:
+
+https://mrsool.atlassian.net/browse/BT-2001
+Validated by Ali Alobaidi
+Validated by mobile devs
+
+https://mrsool.atlassian.net/browse/BT-2007
+Waiting for QA validation
+
+What will I do today:
+https://mrsool.atlassian.net/browse/BT-2001
+Waiting for QA validation
+
+https://mrsool.atlassian.net/browse/BT-2007
+Waiting for QA validation
+
+https://mrsool.atlassian.net/browse/BT-2205
+Got assigned a new task
+Exploring it
+Work on it
+
+Blockers:
+None
+Free Capacity:
+Not Available
+
+
+
+
+If the admin selects the functional tag then the form will be as follows:
+
+
+
+

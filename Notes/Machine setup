@@ -1,0 +1,523 @@
+					Machine setup
+================================================================================================
+
+Opera:
+
+sudo snap install opera
+
+*******************
+
+Google chrome:
+
+sudo apt install wget
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+
+*******************
+
+Update google chrome: 
+sudo apt-get --only-upgrade install google-chrome-stable
+
+*******************
+
+Vs code:
+sudo snap install --classic code
+
+*******************
+
+Update vs code:
+
+sudo dpkg -i code_1.78.1-1683194560_amd64.deb
+
+**************
+
+Hubstaff:
+
+install hubstaff.sh file
+make it executable from "permissions"
+sh file_name.sh
+
+Slack:
+
+sudo snap install slack --classic
+
+*************************
+
+slack:
+
+https://slack.com/help/articles/212924728-Download-Slack-for-Linux--beta-
+
+*****************************
+docker:
+
+https://askubuntu.com/questions/1409192/cannot-install-docker-desktop-on-ubuntu-22-04
+
+1) Update and install dependencies:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-release
+
+2) Set up the Docker repository:
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+3) Install the docker engine:
+sudo apt update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+
+4) Install Docker Desktop (You must download the deb package first from step 2 from the following document: Install Docker Dekstop)
+sudo apt-get install ./docker-desktop-<version>-<arch>.deb
+
+check versions:
+
+$ docker compose version
+Docker Compose version v2.7.0
+
+$ docker --version
+Docker version 24.0.6, build ed223bc
+
+$ docker version
+Client: Docker Engine - Community
+ Cloud integration: v1.0.28
+ Version:           24.0.6
+ API version:       1.41 (downgraded from 1.43)
+ Go version:        go1.20.7
+ Git commit:        ed223bc
+ Built:             Mon Sep  4 12:32:12 2023
+ OS/Arch:           linux/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.11.0 (83626)
+ Engine:
+  Version:          20.10.17
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.17.11
+  Git commit:       a89b842
+  Built:            Mon Jun  6 23:01:23 2022
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.6
+  GitCommit:        10c12954828e7c7c9b6e0ea9b0c02b01407d3ae1
+ runc:
+  Version:          1.1.2
+  GitCommit:        v1.1.2-0-ga916309
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+******************
+
+install postman:
+
+snap install postman
+
+
+================================================================================================
+					Nvm
+					
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+to ~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc
+
+
+***************
+
+   25  nvm -v
+   26  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   27  export NVM_DIR="$HOME/.nvm"
+   28  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+   29  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+   30  nvm -v
+   31  node -v
+   32  nvm install node --reinstall-packages-from=node
+   33  nvm install "lts/*" --reinstall-packages-from="$(nvm current)"
+   34  nvm versions
+   35  nvm list
+   36  node -v
+   37  nvm list
+   38  npm -v
+   39  sudo npm install -g npm@latest
+   40  node -v
+   41  npm -v
+   42  nvm install node --latest-npm
+   43  nvm list
+
+
+nvm list 
+nvm alias default 20
+
+=================================================================================================
+					Rvm to load in bash by default
+					
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" (add this is .bashrc)
+
+
+
+But in my add below lines works:
+
+export PATH=/home/dev/.rvm/gems/ruby-3.1.2/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+=================================================================================================
+
+install rvm and ruby 3.1.2:
+
+   54  sudo apt update
+   55  sudo apt-get install curl gpg
+   56  \curl -sSL https://get.rvm.io | bash
+   57  rvm -v
+   58  source ~/.rvm/scripts/rvm
+   59  rvm -v
+   60  rvm requirements
+   61  rvm use 3.1.2 --default
+   62  rvm install "ruby-3.1.2"
+   63  ruby -v
+   64  rvm list
+
+
+=================================================================================================
+
+rvm and ruby commands:
+
+1) Install Ruby Versions
+To install a specific Ruby version, use the rvm install command. For example, to install Ruby 3.1.2:
+
+rvm install 3.1.2
+
+2) Set Default Ruby Version
+
+rvm use 3.1.2 --default
+
+3) Switch Between Ruby Versions
+
+rvm use 2.7.0
+
+4) You can list all installed Ruby versions with:
+rvm list
+
+5) To uninstall a specific Ruby version, you can use:
+
+rvm remove 3.1.2
+
+6)
+which ruby
+
+/home/dev/.rvm/rubies/ruby-3.1.2/bin/ruby
+
+=================================================================================================
+					Installing rails
+					
+Error installing rails:
+	There are no versions of activesupport (= 7.0.4.2) compatible with your Ruby & RubyGems. Maybe try installing an older version of the gem you're looking for?
+	activesupport requires Ruby version >= 2.7.0. The current ruby version is 2.6.5.114.
+
+solution:
+
+- gem install rails -v 6.0.0
+
+ERROR:  Error installing rails:
+	The last version of nokogiri (>= 1.8.5) to support your Ruby & RubyGems was 1.13.10. Try installing it with `gem install nokogiri -v 1.13.10` and then running the current command again
+	nokogiri requires Ruby version >= 2.7, < 3.3.dev. The current ruby version is 2.6.5.114.
+
+solution: 
+
+- gem install nokogiri -v 1.13.10
+
+===================================================================================================
+					Configuring Mysql
+
+Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
+ ... Failed! Error: SET PASSWORD has no significance for user 'root'@'localhost' as the authentication method used doesn't store authentication data in the MySQL server. Please consider using ALTER USER instead if you want to change authentication parameters.
+
+- sudo killall -9 mysql_secure_installation 
+- sudo mysql 
+- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SetRootPasswordHere';
+- exit
+- sudo mysql_secure_installation
+- Enter password
+- "No for every option"
+
+
+- Copy & paste the file '.env.development.local.example', name it as '.env.development.local'
+- Enter your mysql password there
+
+
+
+
+
+                                       Setup mysql (v5.7.42)
+                                       
+                                       
+- https://www.devart.com/dbforge/mysql/how-to-install-mysql-on-ubuntu/
+
+- https://computingforgeeks.com/how-to-install-mysql-on-ubuntu-focal/
+
+- https://unix.stackexchange.com/questions/389747/error-processing-package-mysql-community-server-during-apt-get-upgrade
+
+- https://tecadmin.net/remove-mysql-completely-from-linux-system/
+
+
+- Copy in (nano ~/.zshrc) export PATH=${PATH}:/usr/local/mysql/bin/ (if there's issue)
+
+- https://stackoverflow.com/questions/41645309/mysql-error-access-denied-for-user-rootlocalhost  (In case of access-denied)
+
+
+ ERROR: 
+ 	my_print_defaults: Can't read dir of '/etc/mysql/conf.d/' (Errcode: 2 - No such file or directory)
+	my_print_defaults: [ERROR] Fatal error in defaults handling. Program aborted!
+	my_print_defaults: Can't read dir of '/etc/mysql/conf.d/' (Errcode: 2 - No such file or directory)
+	my_print_defaults: [ERROR] Fatal error in defaults handling. Program aborted!
+	my_print_defaults: Can't read dir of '/etc/mysql/conf.d/' (Errcode: 2 - No such file or directory)
+	my_print_defaults: [ERROR] Fatal error in defaults handling. Program aborted!
+	my_print_defaults: Can't read dir of '/etc/mysql/conf.d/' (Errcode: 2 - No such file or directory)
+	my_print_defaults: [ERROR] Fatal error in defaults handling. Program aborted!
+	mysqld: Can't read dir of '/etc/mysql/conf.d/' (Errcode: 2 - No such file or directory)
+	
+solution: 
+	
+	sudo mkdir -p /etc/mysql/conf.d/
+
+=====================================================================================================
+					bundle install
+- bundle install
+
+Fetching rmagick-5.1.0.gem
+Building native extensions. This could take a while...
+ERROR:  Error installing rmagick:
+	ERROR: Failed to build gem native extension.
+
+solution:
+
+- sudo apt-get install libmagick++-dev
+- bundle install
+======================================================================================================
+
+- rails db:create
+=======================================================================================================
+                                       rails db:migrate
+
+Caused by:
+Mysql2::Error: This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
+ 
+ solution:
+
+- open mysql console (mysql -u root -p)
+- SET GLOBAL log_bin_trust_function_creators = 1;
+- exit
+- rails db:migrate
+
+=======================================================================================================      
+                                        rails db:seed
+                                        
+=======================================================================================================
+					set git crendentials locally
+
+- git config --local --edit
+- git config --local user.name 'MuhammadFakhar'
+- git config --local user.email 'mfakhar@mrsool.co'
+- git config --local --list
+
+=======================================================================================================
+                                      Clone Mrsool 
+                                      
+git clone https://MuhammadFakhar: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@github.com/mrsool/mrsool-backend.git
+
+========================================================================================================
+                                      OH my ZSH
+
+https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df
+========================================================================================================
+                                       docker (v23.0.1)
+
+- sudo apt-get remove docker docker-engine docker.io containerd runc              (remove docker-engine if doesn't exist)
+- sudo apt-get update
+- sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+- echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+- sudo apt-get update
+- sudo apt-get install docker-ce=5:20.10.11~3-0~ubuntu-focal docker-ce-cli=5:20.10.11~3-0~ubuntu-focal containerd.io (replace it with 5:23.0.0-1~ubuntu.20.04~focal)
+
+
+  (apt-cache madison docker-ce) => to check available versionof docker
+
+
+========================================================================================================
+
+                                   docker-compose (v1.29.2)
+
+- sudo rm /usr/local/bin/docker-compose
+- sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+- sudo chmod +x /usr/local/bin/docker-compose
+- docker-compose --version
+
+========================================================================================================
+                                    stop redis server
+
+- sudo systemctl stop redis-server
+
+========================================================================================================
+                                    stop mysql server
+ 
+ - sudo systemctl stop mysql
+
+========================================================================================================
+					Rubocop setup
+					
+gem install specific_install
+gem specific_install -l https://github.com/mrsool/rubocop-mrsool
+
+
+
+********************************************************************
+
+
+all setup history:
+
+    1  '/home/dev/Downloads/Hubstaff-1.6.16-c202cdfc (1).sh' 
+    2  sudo apt-get update
+    3  sudo apt-get install ca-certificates curl gnupg lsb-release
+    4  sudo mkdir -p /etc/apt/keyrings
+    5  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    6  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    7  sudo apt update
+    8  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    9  cd Desktop/
+   10  ls
+   11  sudo apt-get install "/home/dev/Downloads/docker-desktop-4.11.0-amd64.deb"
+   12  docker -v
+   13  docker ps
+   14  docker compose version
+   15  docker --version
+   16  docker version
+   17  npm -v
+   18  sudo apt install nodejs
+   19  node -v
+   20  nvm -v
+   21  npm -v
+   22  sudo apt install npm
+   23  node -v
+   24  npm -v
+   25  nvm -v
+   26  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   27  export NVM_DIR="$HOME/.nvm"
+   28  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+   29  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+   30  nvm -v
+   31  node -v
+   32  nvm install node --reinstall-packages-from=node
+   33  nvm install "lts/*" --reinstall-packages-from="$(nvm current)"
+   34  nvm versions
+   35  nvm list
+   36  node -v
+   37  nvm list
+   38  npm -v
+   39  sudo npm install -g npm@latest
+   40  node -v
+   41  npm -v
+   42  nvm install node --latest-npm
+   43  nvm list
+   44  node -v
+   45  sudo npm install -g npm@latest
+   46  node -v
+   47  sudo npm install -g npm@latest
+   48  npm -v
+   49  node -v
+   50  npm i -g npm@latest
+   51  npm -v
+   52  node -v
+   53  clear
+   54  sudo apt update
+   55  sudo apt-get install curl gpg
+   56  \curl -sSL https://get.rvm.io | bash
+   57  rvm -v
+   58  source ~/.rvm/scripts/rvm
+   59  rvm -v
+   60  rvm requirements
+   61  rvm use 3.1.2 --default
+   62  rvm install "ruby-3.1.2"
+   63  ruby -v
+   64  rvm list
+   65  history -10
+   66  history 10
+   67  history 30
+   68  which ruby
+   69  sudo apt-get install git curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
+   70  rails setup **********************************
+   72  sudo apt-get install yarn
+   73  sudo apt-get install libsqlite3-dev
+   74  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+   75  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+   76  sudo apt-get update
+   77  sudo apt install postgresql pgadmin4
+   
+
+   78  *********************postgress
+   79  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+   80  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+   81  sudo apt-get update
+   82  sudo apt-get install postgresql pgadmin4
+   83  curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+   84  sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+   85  sudo apt install postgresql pgadmin4
+   86  gem -v
+   87  ruby -v
+   88  rvm -v
+   89  rvm list
+   90  ruby -v
+   91  source ~/.rvm/scripts/rvm
+   92  ruby -v
+   93  code ~/.bashrc
+   94  source ~/.bashrc
+   95  ruby -v
+   96  sudo apt-get install curl git gitk
+   97  touch new_vscode_settings.json
+   98  gem install rubocop
+   99  gem which rubocop
+  100  cd /home/dev/.rvm/gems/ruby-3.1.2/gems
+  101  ls
+  102  ls -al
+  103  ls -l /usr/local/bin/rubocop
+  104  cd
+  105  which rubocop
+  106  rubocop -v
+  107  gem list
+  108  ruby -v
+  109  gem environment
+  110  git status
+  111  git config user.name
+  112  git pull origin master
+  113  docker-compose -v
+  114  history 
+  
+  
+********************************************************************
+Other utilities
+
+
+sqlite:
+sudo apt-get install sqlitebrowser
+
+********************************************************************
+
+install redis:
+
+sudo apt update
+sudo apt install redis-server
+
+After the installation, Redis should start automatically as a systemd service. You can check the status with:
+
+sudo systemctl status redis-server
+
+You can also enable Redis to start at boot with:
+
+sudo systemctl enable redis-server
+
+********************************************************************
+

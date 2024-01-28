@@ -1,0 +1,186 @@
+ls -a    ==  show hidden files
+
+
+
+less   =  to read file 
+
+
+wc   == count words
+
+cat file 
+
+
+
+sort file.txt                 == sort file in alphabatical order
+
+sort -r file.txt           == sort file in alphabatical order in reverse order
+
+grep -i nouman combined_notes.txt                             =  find nouman case_insensitive from this file
+
+cat file | grep nouman
+
+
+find ~ -name combined_notes.txt 
+
+*************************
+
+
+ 1970  wc -l combined_notes.txt 
+ 1971  cat combined_notes.txt 
+ 1972  clear
+ 1973  sort combined_notes.txt 
+ 1974  clear
+ 1975  grep nouman /etc/passwd
+ 1976  clear
+ 1977  cat combined_notes.txt  | grep nouman
+ 1978  cat combined_notes.txt  | grep -i nouman
+ 1979  clear
+ 1980  alias 
+ 1981  alias cl=clear
+ 1982  cl
+ 1983  alias
+ 1984  cl
+ 1985  grep -i nouman combined_notes.txt 
+ 1986  cl
+ 1987  clear
+ 1988  pwd
+ 1989  less /etc/passwd
+ 1990  cut -f1 -d":" /etc/passwd
+ 1991  less /etc/passwd
+ 1992  cl
+ 1993  paste combined_notes.txt  linux-commands.txt 
+ 1994  cl
+ 1995  alias
+ 1996  clear
+ 1997  locate ls
+ 1998  locate whereis
+ 1999  locate
+ 2000  whereis ls
+ 2001  which ls
+ 2002  find ~ -name combined_notes.txt 
+ 2003  clear
+ 2004  ls /bin
+ 2005  clear
+ 2006  ls /
+ 2007  ll /
+ 2008  clear
+ 2009  cat -n combined_notes.txt 
+ 2010  clear
+ 2011  cat -s combined_notes.txt 
+ 2012  cat combined_notes.txt 
+ 2013  clear
+ 2014  cat -b combined_notes.txt 
+
+
+
+******************************************
+
+check processes and kill:
+
+ps aux | grep sidekiq
+
+sudo kill -9 168830
+
+
+******************************************
+
+We use systemctl status command under systemd to view the status of the given service on Linux operating systems.
+
+systemctl status {service-name}
+
+1) systemctl status redis
+
+2) systemctl status mysql
+
+
+see all running_services:
+systemctl list-units  --type=service  --state=running
+
+
+******************************************
+
+
+sudo service mysql start
+sudo service mysql stop
+
+sudo service redis start
+
+******************************************
+
+
+typing the following will display what shell the terminal opened with:
+
+echo $SHELL
+However, to find out what shell you are currently in (you may have changed it) type
+
+ps -p $$
+e.g. you will see that the shell is bash in the example output
+
+  PID TTY          TIME CMD
+ 3500 pts/0    00:00:01 bash
+Another method is to use
+
+echo $0
+this will simply return the name of the current shell.
+
+******************************************
+
+shell files:
+
+code ~/.bashrc
+code ~/.zshrc
+
+
+open the file that corresponds to your shell (~/.bash_profile, ~/.zshrc, ~/.profile, ~/.bashrc) and make
+
+******************************************
+
+
+Before docker project:
+
+sudo service redis stop
+sudo service mysql stop
+
+after docker project:
+
+sudo service redis start
+sudo service mysql start
+
+check status:
+
+systemctl status redis
+systemctl status mysql
+
+**********
+
+
+sudo systemctl stop redis-server                         # use in modern linux versions
+sudo systemctl stop mysql
+
+
+******************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+feature/CMT-1099-add-possibility-to-set-order-rank-for-categories
+
+
+
+
+
+
+
+
+
+

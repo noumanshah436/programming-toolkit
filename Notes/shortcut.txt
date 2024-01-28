@@ -1,0 +1,60 @@
+
+
+select whole line:
+ select first word of line and press ( shift+ fn+ right arrow  )
+
+ ctrl + select == multiselect
+ ctrl + shift + select ==   select multiple lines on same column
+ ctrl + shift + select ==   select whole word with arrow keys
+ ctrl + select(arrow key)         ==   move cursor at the end the end of word on multiple lines
+
+ shift + fn(while off) + arrow_key ==   select whole line with arrow keys
+ 
+ fn(while off)  + arrow keys  = move start or end of line in terminal
+
+
+*********************************************
+
+VScode
+
+ALt + z =    wrap text
+
+select word + ctrl + shift + f    =  search in files
+
+
+*********************************************
+
+Terminal:
+
+ctrl+l     to clear terminalz
+
+
+
+*********************************************
+
+Slack:
+
+add `code` to make code highlighted
+
+Bold: Surround the text with asterisks *like this* to make it bold.
+
+Italic: Surround the text with underscores _like this_ to make it italic.
+
+Strikethrough: Surround the text with tildes ~like this~ to add strikethrough.
+
+Code: Surround the text with backticks `like this` to format it as code. You can also use triple backticks to format multiple lines of code.
+
+Quote: Start the line with > to format it as a quote. You can also use >>> to format multiple lines of text as a quote.
+
+Mentioning users and channels: Use the @ symbol followed by the username or channel name to mention them. For example, @john or #general.
+
+Emoji: Use colons :smile: to insert an emoji into your message.
+
+Linking: Surround the link with angle brackets <http://example.com> to display it as a clickable link.
+
+Unfurling: Slack automatically unfurls links and displays a preview of the content. To disable unfurling, surround the link with < >.
+
+Escaping special characters: If you want to display special characters as they are without formatting, you can use a backslash \ before the character. For example, \* will display as an asterisk rather than formatting the text as bold.
+
+
+*********************************************

@@ -1,0 +1,760 @@
+
+
+
+git config --global user.name "noumanshah436"
+git config --global user.email "noumanshah436@gmail.com"
+
+git remote set-url origin git@github.com:noumanshah436/Ruby_Training.git
+
+
+git config --local user.name 'noumanshah436'
+git config --local user.email 'noumanshah436@gmail.com'
+
+git config --global user.name 'noumanshah436'
+git config --global user.email 'noumanshah436@gmail.com'
+
+**************************************************
+
+git init
+git config --global user.email "noumanrehman042@gmail.com"
+git config --global user.name "NoumanShah042"
+
+
+git config user.email
+git config user.name
+
+*******************
+
+use two github accounts:
+https://gist.github.com/rahularity/86da20fe3858e6b311de068201d279e3
+
+
+git config user.email "nouman.rehman@devsinc.com"
+git config user.name "noumanrehman042"
+
+
+git config --global user.email "nouman.rehman@devsinc.com"
+git config --global user.name "noumanrehman042"
+
+******************
+
+git status
+git add -A
+git commit -m "commit"
+git push -u origin master
+
+******************
+
+git <command> --help    ___  git add --help ___   git config --help        full documentation
+git <command> -h        ____  git add -h  ___  git config -h			summary
+
+help
+clear  ->  clear the terminal
+
+****************
+
+gitignore
+
+https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20)%20to%20escape%20the%20character.
+
+touch .gitignore
+|     mylogs.log        ignore this file
+|     *.cpp             ignore all cpp files
+|     folder/           ignore this folder
+|     /folder 		ignore this folder
+|     /.idea/workspace.xml
+
+**************************************************
+
+Track Changes:
+
+https://www.udemy.com/course/ruby-on-rails-6-learn-20-gems-build-an-e-learning-platform/learn/lecture/24163720#overview
+
+revert all changes to the last commit ( undo changes since last commit: ):
+
+git clean -fd
+git reset --hard
+
+**************************************************
+
+// suppose you commit changes and push it to github and
+// now you want to delete last commit from github
+// (this will revert changes both from local and github)
+
+git reset HEAD^ --hard
+git push -f
+
+
+***************
+
+Undo commit but changes remains there.
+( git uncheck last commit ):
+
+git reset --soft HEAD~1
+
+for last n commits commit:
+git reset --soft HEAD~n
+
+
+then force push to github
+
+**************************************************
+
+git checkout index.html    ---  recover this file
+git checkout -f            --- match all files to previous commit
+
+git revert <commit-id>       # Undo a commit by creating a new commit
+
+
+**************************************************
+
+stage files and run this to stash them ( make diff only for staged files):
+
+git diff --cached > 'saving_work.patch'
+
+apply diff:
+
+git apply "/home/dev/patch files/saving_work.patch"
+
+	or
+
+git apply --reject --whitespace=fix "/home/dev/patch files/saving_work.patch"
+
+******************************
+
+https://www.freecodecamp.org/news/git-stash-commands/#how-to-stash-your-changes-
+
+stash:
+The git stash command takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy
+
+1) git stash save "old_work_all_backup"
+
+2) git stash list
+
+3) git stash apply stash@{0}
+
+
+******************************************************************************
+
+Stage part of file to commit:
+
+https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git
+
+**************
+
+To Remove the file from the Staging Area, making sure that it will NOT be part of the next commit.
+
+git restore --staged myFile.js
+
+************
+
+In case you also want to discard the local changes in this file, you can simply remove the --staged option:
+This will discard any local modifications in this file and reset it to its last committed state
+
+$ git restore index.html
+
+****************************************
+
+git reset to Unstage:
+
+Apart from restore you can also use git reset to unstage changes. If you're using a Git version older than 2.23, you will have to use reset because restore is quite a new feature in Git.
+Exactly like git restore --staged, this makes sure the file is NOT included in our next commit. The local changes themselves are not affected by this command.
+
+$ git reset myFile.js
+
+********
+
+Unstaging All Files at Once
+Sometimes, you might want to unstage all of the files you had already added to the Staging Area. In such a situation, you can use git reset without further options:
+
+$ git reset
+
+The Staging Area will be emptied (but your local changes themselves are left untouched).
+
+
+******************************************************************************
+
+git log     -- show all commits
+
+git log -p     --  show all added or removed lines of code
+
+git log -p -1    ----> :q
+
+git log -p <file>      ---- show all changes for a specific file
+
+git log --pretty=oneline   ----  show all commits in one line
+
+git log --pretty=short   ----  show all commits in with just author name and message
+
+pres q to quit from log
+
+**********
+
+git diff            --  compare working tree with the staging area
+git dif --staged    --  compare  staging area with last commit
+
+git diff --color             # show colored diff
+
+
+git diff --cached    -- command is used to view the changes that have been staged (added to the index) but not yet committed in Git.
+                        It shows the differences between the currently staged changes and the last commit.
+
+
+Note:
+In Git, the commands git diff --staged and git diff --cached are equivalent and provide the same functionality.
+Both commands display the differences between the changes that have been staged (added to the index) and the last commit.
+
+The reason for having two different command options (--staged and --cached) that perform the same operation is historical. Originally, the command was git diff --cached,
+but the term "staged" is more intuitive for users, so the --staged option was introduced as an alternative to --cached. Both options can be used interchangeably.
+
+**************************************************
+
+git rm file.txt   		        # removes file.txt both from git and file system
+git rm --cached file.txt 		# only removes file.txt both from git index
+git rm --cached waste.html      ---  add file to untracked area
+
+
+**************************************************
+
+git branch:
+
+git branch feature1    -- make new branch
+
+git checkout feature1      --  switch to this branch
+
+git checkout master
+
+****
+
+git checkout -b feature2       -- make branch and also switch to it
+
+****
+
+Delete a branch with:
+
+git branch -d <branch>
+
+The -d option will delete the branch only if it has already been pushed and merged with the remote branch.
+
+Use -D instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet. The branch is now deleted locally.
+
+git branch -D feature1
+
+**************************************************
+
+git merge feature1
+
+**************************************************
+
+git remote add origin https://github.com/userName/nameOfRepo.git
+
+git push -u origin master
+
+git remote -v
+**************************************************
+
+git pull   --   to get changes from the remote repo
+
+**************************************************
+
+git clone url directoryNameOrPath      # clones a git repo from the address into the given directory
+
+git clone url
+
+**************************************************
+
+remove git from folder ( make it a normal folder)
+rm -rf .git
+
+**************************************************
+
+This code will pull all remote branches code to the local repository.
+
+for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do
+   git branch --track ${branch#remotes/origin/} $branch
+done
+
+**************************************************
+
+
+https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files  ----- see about .gitignore
+
+echo "# Enterprise-Application-Development-Assignment-1" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/NoumanShah042/nameOfRepo.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/NoumanShah042/nameOfRepo.git
+git branch -M main
+git push -u origin main
+
+**************************************************
+
+adding ssh key --  https://www.youtube.com/watch?v=gwWKnnCMQ5c    1:02:00
+
+**************************************************
+
+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
+
+**************************************************
+nabeel.shafiq@devsinc.com
+
+training.coordinator@devsinc.com
+
+*************************************************
+
+change date of commit
+
+$ GIT_AUTHOR_DATE='Tue Nov 9 1:10:12 2021' GIT_COMMITTER_DATE='Tue Nov 9 1:10:12 2021' git commit -m 'initialcommit'
+
+
+GIT_AUTHOR_DATE='Wed Dec 2 11:10:12 2021' GIT_COMMITTER_DATE='Wed Dec 2 11:10:12 2021' git commit -m 'adding working tree commit'
+
+
+******************************************************************************************************
+
+
+Git Stash:
+
+
+https://www.atlassian.com/git/tutorials/saving-changes/git-stash#:~:text=git%20stash%20temporarily%20shelves%20(or,re%2Dapply%20them%20later%20on.
+https://www.freecodecamp.org/news/git-stash-commands/#how-to-stash-your-changes-
+
+
+-> The git stash command takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy
+
+git stash
+
+
+-> To provide a bit more context, it's good practice to annotate your stashes with a description, using
+
+git stash save "message"
+
+
+*******************************
+
+Stashing untracked or ignored files
+
+By default, running git stash will stash:
+-> changes that have been added to your index (staged changes)
+-> changes made to files that are currently tracked by Git (unstaged changes)
+
+But it will not stash:
+-> new files in your working copy that have not yet been staged
+-> files that have been ignored
+
+
+Adding the -u option (or --include-untracked) tells git stash to also stash your untracked files:
+git stash -u
+
+
+You can include changes to ignored files as well by passing the -a option (or --all) when running git stash.
+
+
+*******************************
+
+git stash pop           			--  for latest stash
+git stash pop stash@{2}			-- for particular stash
+
+Apply the stash and also remove that stash from the stash stack.
+
+*******************************
+
+git stash apply				--  for latest stash
+git stash apply stash@{2}			-- for particular stash
+
+Apply the stash and keep them in your stash in the stash stack
+
+
+*******************************
+
+-> You can view a summary of a stash with :
+
+git stash show
+
+-> Or pass the -p option (or --patch) to view the full diff of a stash:
+
+git stash show -p
+
+*******************************
+
+Cleaning up your stash:
+
+-> If you decide you no longer need a particular stash, you can delete it with git stash drop:
+
+ git stash drop stash@{1}
+
+-> Or you can delete all of your stashes with:
+
+$ git stash clear
+
+*******************************
+
+make diff of stashed work:
+
+git stash show -p stash@{n} > my-patch-file.patch
+
+
+*******************************
+
+https://gist.github.com/Preethi-Dev/fa8ae46a75761356dc1fa711376c8345
+
+CheetSheet:
+
+
+Stash the changes
+git stash
+git stash save
+
+Stash the untracked files
+git stash --include-untracked
+git stash -u
+
+List the stashes
+git stash list
+
+show the latest stash
+git stash show
+git stash show -p
+git stash show -u
+git stash show --include-untracked
+git stash show -p -u
+git stash show -p --only-untracked
+
+Show the individual stash
+git stash show stash@{1}
+git stash show stash@{1} -p
+git stash show stash@{1} -u
+git stash show stash@{1} --include-untracked
+git stash show stash@{1} --only-untracked
+
+Apply the stash
+git stash pop
+git stash apply
+git stash apply stash@{1}
+
+Delete the stash
+git stash clear
+git stash drop stash@{2}
+
+Create branch from stash
+git stash branch <branch_name>
+git stash branch <branch_name> stash@{revision}
+
+
+
+******************************************************************************************************
+
+
+fakhar bhai git:
+
+ 1995  git config --global --edit
+ 1996  clear
+ 1997  git config --local --edit
+ 1998  git config --local user.name 'MuhammadFakhar'
+ 1999  git config --local user.email 'mfakhar@mrsool.co'
+ 2000  git config --local --lost
+ 2001  git config --local --list
+ 2002  clear
+ 2003  git fetch origin feature/CAI-10813-10817-preview
+ 2004  git checkout feature/CAI-10813-10817-preview
+ 2005  git stash list
+ 2006  git branch
+ 2007  git checkout feature/CAI-10813-10817-preview
+ 2008  history 20
+
+
+ feature/CAI-10813-10817-preview
+
+
+********************************************************************************************************
+
+https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+
+Conventional Commits syntax:
+
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+
+**************************************
+
+The commit type can include the following:
+
+feat – a new feature is introduced with the changes
+fix – a bug fix has occurred
+chore – changes that do not relate to a fix or feature and don't modify src or test files (for example updating dependencies)
+refactor – refactored code that neither fixes a bug nor adds a feature
+docs – updates to documentation such as a the README or other markdown files
+style – changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, and so on.
+test – including new or correcting previous tests
+perf – performance improvements
+ci – continuous integration related
+build – changes that affect the build system or external dependencies
+revert – reverts a previous commit
+
+**************************************
+
+Full Conventional Commit Example
+fix: fix foo to enable bar
+
+This fixes the broken behavior of the component by doing xyz.
+
+BREAKING CHANGE
+Before this fix foo wasn't enabled at all, behavior changes from <old> to <new>
+
+Closes D2IQ-12345
+
+***************************************
+
+Commit Message Comparisons
+Review the following messages and see how many of the suggested guidelines they check off in each category.
+
+Good
+feat: improve performance with lazy load implementation for images
+chore: update npm dependency to latest version
+Fix bug preventing users from submitting the subscribe form
+Update incorrect client phone number within footer body per client request
+
+
+Bad
+fixed bug on landing page
+Changed style
+oops
+I think I fixed it this time?
+empty commit messages
+
+**************************************
+
+
+Here's a great template of a good commit message originally written by Tim pope:
+
+Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase can get confused if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
+or "Fixes bug."  This convention matches up with commit messages generated
+by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+
+- Typically a hyphen or asterisk is used for the bullet, followed by a
+  single space, with blank lines in between, but conventions vary here
+
+- Use a hanging indent
+
+If you use an issue tracker, add a reference(s) to them at the bottom,
+like so:
+
+Resolves: #123
+
+
+********************************************************************************************************
+cherry-pick:
+
+In Git, "cherry picking" is a technique used to select and apply specific commits from one branch to another.
+ This allows you to pick individual changes (commits) and apply them to a different branch without merging the entire branch.
+ Cherry picking is useful in situations where you only want specific changes from one branch and not the entire set of changes.
+
+Here's an example of how to use cherry pick in Git:
+
+Let's say you have two branches: `feature_branch` and `main_branch`. You want to pick a specific commit from `feature_branch` and apply it to `main_branch`.
+
+
+3. **Identify the Commit to Cherry Pick:**
+   Use `git log` to find the commit hash of the change you want to cherry pick. Suppose the commit hash is `abcdef`:
+   ```bash
+   git checkout feature_branch
+   git log
+   ```
+
+2. **Check out the Target Branch:**
+   Now move to the branch where you want to apply the cherry-picked commit. In this case, it's the `main_branch`:
+   ```bash
+   git checkout main_branch
+   ```
+
+3. **Cherry Pick the Commit:**
+   Apply the commit to the current branch using `git cherry-pick`:
+   ```bash
+   git cherry-pick abcdef
+   ```
+
+   Replace `abcdef` with the actual commit hash you want to cherry-pick.
+
+4. **Resolve Conflicts (if any):**
+   If there are conflicts during the cherry-pick process, Git will pause and ask you to resolve them. Manually resolve conflicts, then continue the cherry-pick process:
+   ```bash
+   git add <conflicted_file>
+   git cherry-pick --continue
+   ```
+
+5. **Commit Changes (if conflicts were resolved):**
+   If you had conflicts, you'll need to make a new commit after resolving them:
+   ```bash
+   git commit
+   ```
+
+6. **Finish the Cherry Pick:**
+   If there were no conflicts or after resolving conflicts and committing the changes, the cherry-pick process is complete.
+
+7. **Optional: Push Changes to Remote:**
+   If you want to push the changes to the remote repository:
+   ```bash
+   git push origin main_branch
+   ```
+
+This example demonstrates cherry picking a specific commit (`abcdef`) from one branch (`feature_branch`) and applying it to another branch (`main_branch`).
+Remember that cherry-picking individual commits should be done with caution, especially in a collaborative environment, to avoid potential conflicts and ensure the integrity of the codebase.
+
+********************************************************************************************************
+
+push work to mrsool:
+
+1) first stage your work
+
+ 1995  git checkout master
+ 1996  git pull origin master
+ 1997  git checkout -b fix/CAI-11652-make-the-name-filed-to-accept-n-after-the-first-space-for-service-types
+ 1998  git branch
+ 1999  git checkout master
+ 2000  git branch -D fix/CAI-11652-make-the-name-filed-to-accept-n-after-the-first-space-for-service-types
+ 2001  git checkout -b fix/CAI-11652-make-the-name-field-to-accept-newline-after-the-first-space
+ 2002  git branch
+ 2003  git checkout feature/CAI-10813-10817-preview
+ 2004  git checkout master
+ 2005  git pull origin master
+ 2006  git checkout fix/CAI-11652-make-the-name-field-to-accept-newline-after-the-first-space
+ 2007  rails c
+ 2008  git diff --cached > 'saving_work.patch'
+ 2009  git branch
+ 2010  git status
+ 2011  git commit
+ 2012  git log
+ 2013  git push origin fix/CAI-11652-make-the-name-field-to-accept-newline-after-the-first-space
+ 2014  git commit --allow-empty -m "Empty commit to trigger preview env"
+ 2015  git log
+ 2016  git push origin fix/CAI-11652-make-the-name-field-to-accept-newline-after-the-first-space
+
+
+******************
+
+create ticket:
+
+take master pull  ( git checkout master,  git pull origin master)
+make branch with add label name before name of branch ( git checkout -b label/name-of-branch )
+add files, commit
+push code ( git push origin label/name-of-branch )
+copy pull req after push
+select preview label from right side
+
+commands executed:
+
+909  git checkout master
+910  git pull origin master
+911  git checkout -b enhancement/CMT-1100-send-city-to-reverse-geocode-for-graphql
+913  git commit -m "Add city field for ReverseGeocode"
+914  git log
+915  git commit -m "Add city field for ReverseGeocode"
+916  git push origin enhancement/CMT-1100-send-city-to-reverse-geocode-for-graphql
+
+************************
+
+push after rebase*:
+
+594  git stash save "Improvements by Alex and Spec"
+595  git checkout master
+596  git pull origin master
+597  git checkout feature/CAI-10813-and-CAI-10821-new-implementation
+598  git log
+600  git rebase master
+601  git rebase --continue
+602  git stash apply stash@{0}
+603  git commit -m "Added specs for content_component and incorporated feedback"
+604  git log
+605  git push origin feature/CAI-10813-and-CAI-10821-new-implementation -f
+
+
+
+************************
+
+push after rebase
+
+1156  git stash save "Removal of added fields"
+1157  git checkout master
+1158  git branch -D feature/CMT-1099-add-possibility-to-set-order-rank-for-categories
+1159  clear
+1160  git pull origin master
+1161  clear
+1162  git fetch origin feature/CMT-1099-add-possibility-to-set-order-rank-for-categories
+1163  git rebase master
+1164  clear
+1165  git checkout feature/CMT-1099-add-possibility-to-set-order-rank-for-categories
+1166  clear
+1167  git rebase master               ( solve conflicts if any, in my case accept the current change and stage the file )
+1168  git stash apply stash@{0}
+1169  clear
+1170  git log
+1171  git commit -m "Removed Shop Category Shift Rank fields"
+1172  git add .
+1173  git commit -m "Removed Shop Category Shift Rank fields"
+1174  git log
+1175  git push origin feature/CMT-1099-add-possibility-to-set-order-rank-for-categories
+1176  git status
+
+
+
+********************************************************************************************************
+
+delete branch we make for feature:
+
+1) click on "colse pull request"
+
+2) click on "delete branch"
+
+
+********************************************************************************************************
+
+empty commit:
+
+git commit --allow-empty -m ‘Empty commit to trigger preview env’
+
+
+
+********************************************************************************************************
+
+
+update branch:
+
+update with rebase
+
+********************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

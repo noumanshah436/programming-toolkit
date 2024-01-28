@@ -1,0 +1,8 @@
+ruby -e 'puts $LOAD_PATH'
+
+
+
+sudo dpkg -i forticlient_vpn_7.0.7.0246_amd64.deb
+
+
+sudo bash ./charles

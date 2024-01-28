@@ -1,0 +1,21 @@
+
+
+https://vitux.com/ubuntu-zsh-shell/
+
+
+install all repos:
+https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df
+
+see all plugins:
+https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+
+
+error:
+RVM is not a function, selecting rubies with 'rvm use ...' will not work.
+
+
+sol:
+
+add below line in this  ~/.bashrc 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
