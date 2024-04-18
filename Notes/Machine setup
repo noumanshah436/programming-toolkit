@@ -171,7 +171,7 @@ install rvm and ruby 3.1.2:
 
    54  sudo apt update
    55  sudo apt-get install curl gpg
-   56  \curl -sSL https://get.rvm.io | bash
+   56  curl -sSL https://get.rvm.io | bash
    57  rvm -v
    58  source ~/.rvm/scripts/rvm
    59  rvm -v
@@ -521,3 +521,21 @@ sudo systemctl enable redis-server
 
 ********************************************************************
 
+
+Setup user for postgress:
+
+$ sudo -u postgres psql
+
+and run command 
+
+> CREATE USER nouman WITH PASSWORD 'noumanrehman042';
+> ALTER USER nouman WITH SUPERUSER;
+> exit
+
+Then run cli with newly created user:
+
+$ psql -h localhost -U nouman -d postgres -W
+
+and give password noumanrehman042
+
+********************************************************************
