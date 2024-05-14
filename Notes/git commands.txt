@@ -735,14 +735,56 @@ git commit --allow-empty -m ‘Empty commit to trigger preview env’
 
 
 ********************************************************************************************************
-
-
-update branch:
-
-update with rebase
-
+Compare branches:
 ********************************************************************************************************
 
+git diff main..chore/migrating-app-from-cra-to-vite
+
+git diff main..chore/migrating-app-from-cra-to-vite > migrating_app_from_cra_to_vite.patch
+
+git diff main..chore/migrating-app-from-cra-to-vite -- . ":(exclude)package-lock.json" > migrating_app_from_cra_to_vite.patch
+
+
+
+
+When you use `git diff` with two branches, it compares the changes between them. The order of the branches in the command affects what you see.
+
+### `git diff main..feature`
+
+- **What it shows**: Changes that are in the `feature` branch but not in the `main` branch.
+- **Use this when**: You want to see what has been added to the `feature` branch that isn't in `main`.
+
+Think of it like this: You're standing on the `main` branch and looking over to the `feature` branch to see what new things have been added over there.
+
+### `git diff feature..main`
+
+- **What it shows**: Changes that are in the `main` branch but not in the `feature` branch.
+- **Use this when**: You want to see what has been added to the `main` branch that isn't in `feature`.
+
+Here, imagine you're standing on the `feature` branch and looking over to the `main` branch to see what new things have been added there.
+
+### Practical Examples:
+
+1. **You are working on a `feature` branch and want to check what new changes have been made to `main` since you branched off:**
+   ```sh
+   git diff feature..main
+   ```
+
+2. **You are on the `main` branch and want to see what changes would be introduced if you merged `feature` into `main`:**
+   ```sh
+   git diff main..feature
+   ```
+
+### Key Idea:
+
+- The first branch in `git diff A..B` is where you start (your reference point).
+- The second branch is what you’re comparing against (what changes have been made since you branched off).
+
+So, `git diff main..feature` shows what’s new in `feature`, and `git diff feature..main` shows what’s new in `main`.
+
+I hope this simplifies it for you! Let me know if you have any questions.
+
+********************************************************************************************************
 
 
 

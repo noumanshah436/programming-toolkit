@@ -47,6 +47,17 @@ slack:
 
 https://slack.com/help/articles/212924728-Download-Slack-for-Linux--beta-
 
+
+or 
+
+Run this and double click on the download file:
+$ sudo apt install slack-desktop-4.36.140-amd64.deb
+
+Update slack:
+
+sudo apt-get update
+sudo apt-get upgrade slack-desktop
+
 *****************************
 docker:
 
@@ -118,6 +129,8 @@ snap install postman
 ================================================================================================
 					Nvm
 					
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+			
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
