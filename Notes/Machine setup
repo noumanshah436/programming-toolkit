@@ -187,6 +187,13 @@ install rvm and ruby 3.1.2:
    56  curl -sSL https://get.rvm.io | bash
    57  rvm -v
    58  source ~/.rvm/scripts/rvm
+   
+Add the following lines to your .bashrc, .bash_profile, or .zshrc:
+   
+export PATH="$HOME/.rvm/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+   59  source ~/.bashrc
    59  rvm -v
    60  rvm requirements
    61  rvm use 3.1.2 --default
@@ -194,6 +201,12 @@ install rvm and ruby 3.1.2:
    63  ruby -v
    64  rvm list
 
+
+To remove this warning:   
+Warning! PATH is not properly set up, /home/dev/.rvm/gems/ruby-3.1.2/bin is not at first place.
+
+Run the following:
+echo "rvm_silence_path_mismatch_check_flag=1" >> ~/.rvmrc
 
 =================================================================================================
 

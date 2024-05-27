@@ -1,0 +1,26 @@
+Hello connections 
+I am about to have my half journey on college life. I learned a lot, explored and yeah, I m thankful for all the resources. 
+Here is the list of all my resources I utilised for my web dev journey 
+
+
+Python - Telusko ,Code with Harry ,Coursera.
+Wev dev basics(start to end) - Code with harry 
+Data structure basics - Tutorials point 
+HTML- CSS -Coding addict 10 hr course
+Mongo - Hitesh Chaudhary
+Node - Transversy Media, Coding addict
+Express - Transversy Media , Ganguly Tech 
+React - Coding addict and Thapa Technical
+MERN - Net Ninja, Coding Addict , Miss Xing, Thapa Technical , Javascript Mastery
+Javascript - Thapa Technical , Coding addict , Geeky Shows 
+Django - Coding Enterpenures , Net Ninja and Telusko
+Flask - Code with Harry and Tech with Tim
+Vue js - Net Ninja 
+Graphql - Net Ninja, Hitesh Chaudhary 
+Blockchain and Solidity - Dapp University and EatTheEarthBlocks 
+One in all - FreeCodeCamp
+
+Projects - Web dev simplified, Clever Programmer and Dev Ed. 
+
+Most Important - While exploring I learned a thing that there are so much channels that have much better contents than that one which we see in the first search. So try to get all the advices specially from the Instagram (The most underrated) which 
+Which have lots of accounts working of learning fields,you can get those underrated channels from them
