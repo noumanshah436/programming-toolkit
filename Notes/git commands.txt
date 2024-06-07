@@ -64,6 +64,16 @@ touch .gitignore
 |     /folder 		ignore this folder
 |     /.idea/workspace.xml
 
+
+Note:
+If the files are already staged and we now want to ignore them, we also need to clean cache otherwise they will not be ignored.
+
+1) Added in gitignore file:
+media/profile_pics/*
+
+2) Run this command to remove the files from Git's cache so they can be ignored moving forward.
+git rm --cached media/profile_pics/*
+
 **************************************************
 
 Track Changes:
