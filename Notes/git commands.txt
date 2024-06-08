@@ -1,5 +1,10 @@
 
 
+Topics:
+
+Renames a branch both locally and on the remote.
+
+****************************************************************************************************
 
 git config --global user.name "noumanshah436"
 git config --global user.email "noumanshah436@gmail.com"
@@ -797,16 +802,20 @@ I hope this simplifies it for you! Let me know if you have any questions.
 ********************************************************************************************************
 
 
+Renames a branch both locally and on the remote.
+
+git branch -m <old-name> <new-name>                    (to rename the local <old-name> branch to <new-name>.)
+git push origin --delete <old-name>                    (to delete the old remote branch.)
+git checkout <new-name>                                (to switch to the renamed branch.)
+git push origin -u <new-name>                          (to set <new-name> as the remote branch for the renamed branch.)
+
+# Examples
+git checkout master
+git branch -m patch-1 patch-2    # Renamed the local branch to `patch-2`
+git push origin --delete patch-1
+git checkout patch-2
+git push origin -u patch-2 # Renames the remote branch to `patch-2`
 
 
-
-
-
-
-
-
-
-
-
-
+********************************************************************************************************
 
