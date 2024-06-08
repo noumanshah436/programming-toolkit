@@ -2,13 +2,25 @@
 
 Topics:
 
+Configure git user information
+
+empty commit
+Compare branches
 Renames a branch both locally and on the remote.
+Delete a remote branch
+Autocorrect git commands
+Find branches containing a specific Git commit
+How does Git's fast-forward mode work?
+
 
 ****************************************************************************************************
+
+Configure git user information:
 
 git config --global user.name "noumanshah436"
 git config --global user.email "noumanshah436@gmail.com"
 
+# Changes the URL of the remote repository.
 git remote set-url origin git@github.com:noumanshah436/Ruby_Training.git
 
 
@@ -819,3 +831,71 @@ git push origin -u patch-2 # Renames the remote branch to `patch-2`
 
 ********************************************************************************************************
 
+Delete a remote branch
+
+Use `git push -d <remote> <branch>` to delete the specified remote <branch> on the given <remote>.
+
+# Examples
+git checkout master
+git push -d origin patch-1                # Deletes the `patch-1` remote branch
+
+********************************************************************************************************
+
+Autocorrect git commands
+
+Configures git to autocorrect mistyped commands.
+
+Use git config --global help.autocorrect 1 to enable git's autocorrect.
+
+# Examples
+git config --global help.autocorrect 1
+git sttaus # Runs `git status` instead
+
+********************************************************************************************************
+
+Find branches containing a specific Git commit
+
+Identify branches in a Git repository that either contain or do not contain a specific commit, using the commit hash as a reference point.
+
+- **Finding branches that contain a commit:** 
+
+   Use the command `git branch --contains <commit>`. This will list all branches that include the specified commit. For example:
+  ```bash
+  git branch --contains 3050fc0
+  # development
+  # network-fixes
+  ```
+
+- **Finding branches that do not contain a commit:** 
+
+   Use the command `git branch --no-contains <commit>`. This will list all branches that do not include the specified commit. For example:
+  
+  ```bash
+  git branch --no-contains 3050fc0
+  # master
+  # adapter-feature
+  ```
+
+These commands are useful for tracking which branches have incorporated specific changes, such as bug fixes or new features.
+
+********************************************************************************************************
+
+How does Git's fast-forward mode work?
+
+Merging a branch is one of the most common operations when working with Git. 
+Depending on your team and projects you've been a part of, you might have heard of or even used Git's fast-forward mode when merging. 
+Fast-forward mode is the default in Git, however GitHub will essentially override this by default and create a merge commit instead.
+
+Fast-forward merge:
+As stated above, Git's default is to use fast-forward merge. It will take the commits from the branch being merged and place them at the tip of the branch 
+you're merging into. This creates a linear history, which is also the main advantage of using fast-forward merge. If you want to emulate fast-forward 
+merge on GitHub, you can use the "Rebase and merge" option.
+
+Non fast-forward merge:
+GitHub, on the other hand, uses non fast-forward merge by default. It will create a merge commit at the tip of the branch you're merging into, optionally 
+referencing the branch being merged in the commit message. This has the advantage of keeping track of branches more explicitly than fast-forward merge. If 
+you want to get the same behavior in a Git terminal, you can use the --no-ff flag.
+
+As a side note, you can configure the default Git merge behavior, using git config. To learn how to do so, you can take a look at the relevant snippet.
+
+********************************************************************************************************
