@@ -1,7 +1,3 @@
-[submodule "node-express"]
-	path = node-express
-	url = git@github.com:noumanshah436/node-express.git
-	branch = master
 [submodule "Typescript-Basics"]
 	path = Typescript-Basics
 	url = git@github.com:noumanshah436/Typescript-Basics.git

@@ -624,6 +624,37 @@ $ sudo dpkg -i mongodb-compass_1.43.4_amd64.deb
 
 this will install MongoDB Compass GUI
 
+*****************************************
+
+https://www.mongodb.com/try/download/database-tools
+
+install Ubuntu 22.04 x86_64 package (deb)
+
+sudo dpkg -i mongodb-database-tools-ubuntu2204-x86_64-100.9.5.deb
 
 
 ****************************************************************************************************************************************
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
+
+install mysql:
+
+
+sudo apt install mysql-server
+
+sudo service mysql status
+
+sudo mysql
+
+and run this command to reset password:
+ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+
+mysql -u root -p
+password: root
+
+
+****************************************************************************************************************************************
+
+
+
