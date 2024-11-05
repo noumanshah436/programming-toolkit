@@ -220,6 +220,8 @@ pres q to quit from log
 git diff            --  compare working tree with the staging area
 git dif --staged    --  compare  staging area with last commit
 
+git diff  --cached combined_notes.txt            -- see changes of specific file
+
 git diff --color             # show colored diff
 
 
